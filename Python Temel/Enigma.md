@@ -4,8 +4,10 @@ Enigma makinesi 2. Dünya savaşında Almanların kodlanmış mesajlarını ilet
 Enigma makinesi “yerine koyarak şifreleme” metodunu kullanır. 
 Yerine koyarak şifrelemenin basit bir metodudur ve bu kodları kırmak oldukça kolaydır. Yerine koyarak şifreleme şemasının basit bir örneği Sezar alfabesidir. Bir Sezar alfabesi alfabenin her harfini belirli adım kadar kaydırır. Bir Sezar alfabesi 1 kere kaydırdığında A -> B, M -> N ve Z -> A olurdu.
 Sezar alfabesinin 3 kere kaydırılması resimdeki gibidir:
+
 ![image](https://user-images.githubusercontent.com/45708619/230013397-6fe6924d-5fce-4121-9820-0fa3827fa2a2.png)
 
+ 
  
 
 Fakat Enigma makinası Sezar alfabesinden oldukça daha güçlüdür. 
