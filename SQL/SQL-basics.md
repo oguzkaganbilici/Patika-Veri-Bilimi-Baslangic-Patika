@@ -1,4 +1,4 @@
-*SELECT*
+SELECT
 SQL komutları arasında sorgu cümleleridir. Tablolardan veri çekmemizi sağlar.
 
 SELECT <sütun_adi>, <sütün_adi2> FROM <tablo_adi>
