@@ -68,3 +68,21 @@ NOT: Bazı SQL dillerinde ~~ LIKE ve ~~* ILIKE, ! NOT  yerine geçer.
 #### SELECT * FROM actor WHERE first_name ~~* 'P%'
 #### SELECT * FROM actor WHERE first_name !~~ 'P%'
 
+  # DISTINCT ve COUNT
+Bir sütundaki farklı (unique) değerleri döndürmek için Distinct anahtar kelimesi kullanılır
+
+#### SELECT DISTINCT rental_rate FROM film;
+rental_rate'teki farklı değerleri döndürür
+
+Bir sorgu sonucunda oluşan veri sayısını Count anahtar kelimesi ile buluruz. 
+
+#### SELECT COUNT(*) FROM  actor WHERE first_name = 'Penelope';
+Penelope adındaki aktörlerin sayısını döndürür
+
+#### SELECT COUNT(*) FROM actor WHERE first_name LIKE 'P%'
+Adı P ile başlayan aktör sayısını döndürür
+
+#### SELECT COUNT(DISTINCT first_name ) FROM actor
+Kaç farklı first_name sayısını döndürür.
+
+
