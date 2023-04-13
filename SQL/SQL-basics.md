@@ -63,8 +63,8 @@ _sadece bir harfi temsil eder.
 
 #### SELECT * FROM actor WHERE first_name LIKE 'J_an'; --> "Jean, Juan, Jian, Joan olabilir"
 
-NOT: Bazı SQL dillerinde ~~ LIKE ve ~~ * ILIKE, ! NOT  yerine geçer.
+NOT: Bazı SQL dillerinde ~~ LIKE ve ~~* ILIKE, ! NOT  yerine geçer.
 #### SELECT * FROM actor WHERE first_name ~~ 'P%'
-#### SELECT * FROM actor WHERE first_name ~~ * 'P%'
+#### SELECT * FROM actor WHERE first_name ~~* 'P%'
 #### SELECT * FROM actor WHERE first_name !~~ 'P%'
 
