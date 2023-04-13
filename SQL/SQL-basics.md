@@ -42,4 +42,29 @@ Burada dikkat edilmesi gereken nokta 100 ve 140 sınır değerleri aralığa dah
 #### SELECT <sütun_adi> FROM <tablo_adi> WHERE length IN (100,140,150,160,170...) == length = 100 OR length = 140 OR length = 150 OR length = 160 OR length = 170 
 #### SELECT <sütun_adi> FROM <tablo_adi> WHERE length NOT IN (100,140,150,160,170...)
   
+# LIKE ve ILIKE
+
+Bazı durumlarda tam eşleşme yerine belirli şablonlara uyan koşulların sağlanmasını isteriz.
+Örneğin first_name sütunun 'Penelope' değerine eşit olmasını değil, ilk harfin 'P' olması koşulunu sağlar. Bunun için LIKE operatörü kullanılır.
+
+#### SELECT * FROM actor WHERE first_name LIKE 'P%' 
+#### SELECT * FROM actor WHERE first_name LIKE '%P' --> p ile biten
+#### SELECT * FROM actor WHERE first_name LIKE 'P%e' --> p ile başlayıp e ile biten
+
+Burada LIKE operatörü büyük küçük harf duyarlıdır. Yani 'A%' ile 'a%' aynı sonuçları vermeyecektir. Bunu önlemek için ILIKE anahtar kelimesi kullanılabilir
+
+#### SELECT * FROM actor WHERE first_name ILIKE 'a%'
+#### SELECT * FROM actor WHERE first_name ILIKE '%a'
+
+#### SELECT * FROM actor WHERE first_name NOT LIKE 'P%' --> p ile başlamayan
+
+Burada kullanılan % karakteri sıfır, bir veya daha fazla karakteri temsil eder ve Wildcard olarak isimlendirilir. Bir diğer Wildcard karakteri ise "_" 'tir. 
+_sadece bir harfi temsil eder.
+
+#### SELECT * FROM actor WHERE first_name LIKE 'J_an'; --> "Jean, Juan, Jian, Joan olabilir"
+
+NOT: Bazı SQL dillerinde ~~ LIKE ve ~~ * ILIKE, ! NOT  yerine geçer.
+#### SELECT * FROM actor WHERE first_name ~~ 'P%'
+#### SELECT * FROM actor WHERE first_name ~~ * 'P%'
+#### SELECT * FROM actor WHERE first_name !~~ 'P%'
 
