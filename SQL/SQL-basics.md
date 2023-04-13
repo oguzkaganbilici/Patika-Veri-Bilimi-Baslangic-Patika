@@ -35,6 +35,11 @@ Belirli aralıkta bulunan verileri sıralamak için BETWEEN... AND yapısı da k
 
 #### SELECT * FROM film WHERE length BETWEEN 100 AND 140;
 Burada dikkat edilmesi gereken nokta 100 ve 140 sınır değerleri aralığa dahildir.
+  
+### SELECT title, length FROM film WHERE length NOT BETWEEN 90 AND 120  === length < 90 OR length > 120
 
 Çok uzun OR sorguları yazmak yerine istenilen değerleri liste haline getirilip IN anahtar kelimesi kullanılabilirdi.
-#### SELECT <sütun_adi> FROM <tablo_adi> WHERE length IN (100,140,150,160,170...);
+#### SELECT <sütun_adi> FROM <tablo_adi> WHERE length IN (100,140,150,160,170...) == length = 100 OR length = 140 OR length = 150 OR length = 160 OR length = 170 
+#### SELECT <sütun_adi> FROM <tablo_adi> WHERE length NOT IN (100,140,150,160,170...)
+  
+
