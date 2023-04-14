@@ -84,5 +84,32 @@ Adı P ile başlayan aktör sayısını döndürür
 
 #### SELECT COUNT(DISTINCT first_name ) FROM actor
 Kaç farklı first_name sayısını döndürür.
+  
+  # ORDER BY
+Order By anahtar kelimesi sayesinde bizler verilerimizi herhangi bir sütunda bulunan değerlere göre azalan veya artan bir şekilde sıralayabiliriz.
+
+#### SELECT <sütun_adi> FROM <tablo_adi> ORDER BY <sütun_adi> ASC/DECS;
+#### SELECT * FROM film ORDER BY title (ASC);
+Varsayılan olarak ASC gelir.
+ASC -> Ascending (Artan)
+DECS -> Descending (Azalan)
+
+Order by koşuldan sonra yazılır
+
+#### SELECT title, rental_rate, length FROM film WHERE title ILIKE 'a%' ORDER BY rental_rate ASC, length DESC
+
+# LIMIT ve OFFSET
+Bazı durumlarda ise koşullarımızı sağlayan verilerin  tamamını değil belirli sayıda olanlarını sıralamak isteriz, bunun için LIMIT anahtar kelimesini kullanırız.
+
+#### SELECT * FROM film WHERE title LIKE 'B%' ORDER BY length DESC LIMIT 10;
+ en uzun ilk 10 film
+ 
+Bazı durumlarda sonuç olarak gördüğümüz veri grubu içerisinden bazılarını geçmek isteriz.
+Örneğin B ile başlayan filmleri uzunluklarına göre sıralayalım ve en uzun 6 filmi pass geçelim ve sonrasındaki 4 filmi sıralayalım.
+
+#### SELECT * FROM film WHERE title LIKE 'B%' ORDER BY length DESC, OFFSET 6, LIMIT 4
+
+
+
 
 
