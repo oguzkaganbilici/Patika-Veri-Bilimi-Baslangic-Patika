@@ -109,6 +109,43 @@ Bazı durumlarda sonuç olarak gördüğümüz veri grubu içerisinden bazılar�
 
 #### SELECT * FROM film WHERE title LIKE 'B%' ORDER BY length DESC, OFFSET 6, LIMIT 4
 
+#AGGREGATE FONKSİYONLAR
+Aggregate fonksiyonlar yardımıyla bizler veri kümelerimizden sonuçlar çıkarabiliriz. 
+-Kaç adet müşterimiz var?
+-Elimizde bulunan filmlerin ort uzunluğu nedir? gibi..
+
+## COUNT
+Toplam kaç tane veri olduğunu ararken Count anahtar kelimesi kullanılabilir.
+#### SELECT COUNT(*) FROM film
+
+## MAX - MIN
+Veri setinde maksimum ve minumum değerleri bulmak için Max-Min anahtar kelimesinden yararlanılır
+#### SELECT MAX(replacement_cost) FROM film
+#### SELECT MIN(replacement_cost) FROM film
+
+## AVG
+Bir veri setinin ortalama değerini bulmak için Avg anahtar kelimesi kullanılır
+#### SELECT AVG(length) FROM film
+
+## ROUND
+Veri setindeki bir sayıyı yuvarlamak için kullanılır.
+Round fonksiyonu 2 parametre alır. İlk parametre yuvarlanacak değer, ikinci parametrede ise kaç karaktere yuvarlanacağını belirtilir.
+#### SELECT ROUND(AVG(length), 3) FROM film
+
+##SUM
+Bir sütundaki tüm verileri toplamak için Sum anahtar kelimesi kullanılır.
+#### SELECT SUM(rental_rate) FROM film
+
+Birden fazla aggregate fonksiyonlarını birlikte kullanabiliriz.
+####SELECT MAX(length), MIN(length), SUM(replacement_cost) FROM film;
+
+####SELECT MAX(length) FROM film WHERE rental_rate IN (0.99, 2.99);
+
+
+
+
+
+
 
 
 
