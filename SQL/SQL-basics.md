@@ -109,7 +109,7 @@ Bazı durumlarda sonuç olarak gördüğümüz veri grubu içerisinden bazılar�
 
 #### SELECT * FROM film WHERE title LIKE 'B%' ORDER BY length DESC, OFFSET 6, LIMIT 4
 
-#AGGREGATE FONKSİYONLAR
+# AGGREGATE FONKSİYONLAR
 Aggregate fonksiyonlar yardımıyla bizler veri kümelerimizden sonuçlar çıkarabiliriz. 
 -Kaç adet müşterimiz var?
 -Elimizde bulunan filmlerin ort uzunluğu nedir? gibi..
