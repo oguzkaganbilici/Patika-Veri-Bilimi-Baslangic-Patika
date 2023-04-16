@@ -164,9 +164,19 @@ Film sayısı 325'ten büyük rental_rate'lere göre gruplanmış veriyi döndü
 #### SELECT staff_id, COUNT(*) FROM payment GROUP BY staff_id HAVING COUNT(*) > 7300
 Toplam satışı 7300'den büyük olan çalışan ID'lerini gruplandırır.
 
+# ALIAS (AS)
+AS anahtar kelimesi sayesinde sorgular sonucu oluşturduğumuz sanal tablolar, sütunlara geçiçi isimler verebiliriz.
 
+#### SELECT <sütun_adı> AS <geçici_ad> FROM <tablo_adı>;
+Burada AS optinional olarak kullanılır yani AS yazmayıp;
+#### SELECT first_name isim, last_name soyisim FROM actor 
+olarak da kullanabiliriz.
+#### SELECT first_name "isim test", last_name "soyisim test" FROM actor 
 
+#CONCAT
+İki sütunu geçiçi olarak birleştirmek istediğimizde Concat fonksiyonu kullanılır.
 
+#### SELECT CONCAT(first_name,' ', last_name) AS 'isim soyisim' FROM actor
 
 
 
