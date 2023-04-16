@@ -141,6 +141,28 @@ Birden fazla aggregate fonksiyonlarını birlikte kullanabiliriz.
 
 ####SELECT MAX(length) FROM film WHERE rental_rate IN (0.99, 2.99);
 
+# GROUP BY
+Bazı durumlada veri kümesini gruplandırarak veriler elde etmek isteriz. Örneğin veri setinde şehirler ve müşteri isimleri olsun. Burada hangi şehirde kaçar tane müşteri olduğunu bulmak istersek Group By anahtar kelimesini kullanırız.
+
+####SELECT rental_rate, MAX(length) FROM film GROUP BY rental_rate 
+####SELECT rental_rate, COUNT(*) FROM GROUP_BY rental_rate
+
+Burada önemli nokta SELECT'ten sonra yazacağımız ifade GROUP_BY'ın kapsadığı bir sütun olması gerekir. Aksi takdirde alaksız iki sütunu yazdığımızda hata alırız.
+
+#### SELECT rating, COUNT(*) FROM film GROUP BY rating
+#### SELECT replacement_cost, MIN(length) FROM film GROUP BY replacement_cost
+#### SELECT replacement_cost, rental_rate,MIN(length) FROM film GROUP BY replacement_cost, rental_rate 
+replacement_cost ve rental_rate degerlerini eşleyip o değerlerin en kısa olanını bulur 
+
+#### SELECT replacement_cost, rental_rate, MIN(length) FROM film GROUP BY replacement_cost, rental_rate ORDER BY replacement_cost ASC, rental_rate DESC;
+
+# HAVING
+Having anahtar kelimesi sayesinde gruplandırılmış verimize koşullar uygulayabiliriz.
+#### SELECT rental_rate, COUNT(*) FROM film GROUP BY rental_rate HAVING COUNT(*) > 325;
+Film sayısı 325'ten büyük rental_rate'lere göre gruplanmış veriyi döndürür
+
+#### SELECT staff_id, COUNT(*) FROM payment GROUP BY staff_id HAVING COUNT(*) > 7300
+Toplam satışı 7300'den büyük olan çalışan ID'lerini gruplandırır.
 
 
 
