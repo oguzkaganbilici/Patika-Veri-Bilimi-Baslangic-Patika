@@ -137,15 +137,15 @@ Bir sütundaki tüm verileri toplamak için Sum anahtar kelimesi kullanılır.
 #### SELECT SUM(rental_rate) FROM film
 
 Birden fazla aggregate fonksiyonlarını birlikte kullanabiliriz.
-####SELECT MAX(length), MIN(length), SUM(replacement_cost) FROM film;
+#### SELECT MAX(length), MIN(length), SUM(replacement_cost) FROM film;
 
-####SELECT MAX(length) FROM film WHERE rental_rate IN (0.99, 2.99);
+#### SELECT MAX(length) FROM film WHERE rental_rate IN (0.99, 2.99);
 
 # GROUP BY
 Bazı durumlada veri kümesini gruplandırarak veriler elde etmek isteriz. Örneğin veri setinde şehirler ve müşteri isimleri olsun. Burada hangi şehirde kaçar tane müşteri olduğunu bulmak istersek Group By anahtar kelimesini kullanırız.
 
-####SELECT rental_rate, MAX(length) FROM film GROUP BY rental_rate 
-####SELECT rental_rate, COUNT(*) FROM GROUP_BY rental_rate
+#### SELECT rental_rate, MAX(length) FROM film GROUP BY rental_rate 
+#### SELECT rental_rate, COUNT(*) FROM GROUP_BY rental_rate
 
 Burada önemli nokta SELECT'ten sonra yazacağımız ifade GROUP_BY'ın kapsadığı bir sütun olması gerekir. Aksi takdirde alaksız iki sütunu yazdığımızda hata alırız.
 
