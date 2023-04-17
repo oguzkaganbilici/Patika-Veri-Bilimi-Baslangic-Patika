@@ -17,11 +17,11 @@ Bir tabloyu içindeki verilerle birlikte kopyalamak istersek AS anahtar kelimesi
 # INSERT INTO
 Tabloya veri eklemek için INSERT INTO anahtar kelimesi kullanılır
 
-####INSERT INTO author (first_name, last_name, email, birthday) VALUES ('Haruki', 'Murakami', 'hm@gmail.com', '1948-11-07'), ('Sabahattin', 'Ali', 'sa@gmail.com', '1914-07-11');
+#### INSERT INTO author (first_name, last_name, email, birthday) VALUES ('Haruki', 'Murakami', 'hm@gmail.com', '1948-11-07'), ('Sabahattin', 'Ali', 'sa@gmail.com', '1914-07-11');
 id otomatik olarak arttığı için veri girişi yapmadık.
 
 Farklı bir tablodan veri kopyalarken yine INSERT INTO kullanılır.
-####INSERT INTO author2 SELECT * FROM author WHERE first_name = 'Sabahattin Ali';
+#### INSERT INTO author2 SELECT * FROM author WHERE first_name = 'Sabahattin Ali';
 
 # DROP
 Bir tablo silmek istediğimiz zaman DROP kullanılır.
