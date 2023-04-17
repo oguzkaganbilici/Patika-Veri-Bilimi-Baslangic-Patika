@@ -132,7 +132,7 @@ Veri setindeki bir sayıyı yuvarlamak için kullanılır.
 Round fonksiyonu 2 parametre alır. İlk parametre yuvarlanacak değer, ikinci parametrede ise kaç karaktere yuvarlanacağını belirtilir.
 #### SELECT ROUND(AVG(length), 3) FROM film
 
-##SUM
+## SUM
 Bir sütundaki tüm verileri toplamak için Sum anahtar kelimesi kullanılır.
 #### SELECT SUM(rental_rate) FROM film
 
@@ -173,7 +173,7 @@ Burada AS optinional olarak kullanılır yani AS yazmayıp;
 olarak da kullanabiliriz.
 #### SELECT first_name "isim test", last_name "soyisim test" FROM actor 
 
-#CONCAT
+# CONCAT
 İki sütunu geçiçi olarak birleştirmek istediğimizde Concat fonksiyonu kullanılır.
 
 #### SELECT CONCAT(first_name,' ', last_name) AS 'isim soyisim' FROM actor
