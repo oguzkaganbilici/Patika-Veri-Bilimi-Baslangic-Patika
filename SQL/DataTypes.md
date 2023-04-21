@@ -28,4 +28,46 @@
 #### SELECT (10.444444 ::DECIMAL)
 şeklinde yapabiliriz.
 
-![image](https://user-images.githubusercontent.com/45708619/233368034-74b83a39-4b94-46bc-8ee2-0f116d844407.png)
+-------
+
+# Karakter Veri Tipleri
+Sınırlı sayıda veri tipi için VARCHAR(x) ve CHAR(x) veri tipi kullanılır. 
+VARCHAR veri tipi doldurulmayan karakterleri yok sayar, CHAR ise doldurulmayan karakterler için de boşluk ayırır. Sınırsız karakter kullanımı içinse TEXT veri tipi kullanılır. 
+
+#### SELECT ('Lorem'::CHAR(10) )
+'Lorem' 5 karakterli olmasına rağmen 10 karakter boş bırakır.
+#### SELECT ('Lorem ipsum dolor sit amet'::CHAR(10))
+'Lorem ipsum dolor sit amet' 26 karakterli olmasına rağmen 10 karakter boş bırakır
+#### SELECT ('Lorem'::VARCHAR(10))
+'Lorem' 5 karakterli olduğundan 5 karakter boş bırakır.
+#### SELECT ('Lorem ipsum dolor sit amet'::VARCHAR(10))
+'Lorem ipsum dolor sit amet' 26 karakterli olmasına rağmen 10 karakter boş bırakır
+#### SELECT ('Lorem ipsum dolor sit amet'::TEXT)
+'Lorem ipsum dolor sit amet' 26 karakterli olmasından dolayı 26 karakter boş bırakır.
+![image](https://user-images.githubusercontent.com/45708619/233741137-5e10e439-a552-4c30-b7d0-952aa22118c3.png)
+
+-----
+#  Boolean Veri Tipleri
+True, False veya Null değerini alabilirler. 
+
+- True: true, yes, on,1
+- False: false, no, off, 0
+
+#### SELECT ('no'::BOOLEAN)
+#### SELECT (yes::BOOLEAN)
+-----
+
+# Zaman Veri Tipleri
+Genellikle yyyy-aa-gg olarak yazılır.
+
+#### SELECT('1996-10-15'::DATE)
+#### SELECT('DEC-02-1900'::DATE)
+#### SELECT('DEC 03 1900'::DATE)
+#### SELECT('1900 December 03'::DATE)
+
+#### SELECT('03:44'::TIME)
+#### SELECT('03:44 AM'::TIME)
+#### SELECT('02:16'::TIME WITH TIME ZONE)
+#### SELECT('1980 December 03 02:16:06'::TIMESTAMP) 
+
+![image](https://user-images.githubusercontent.com/45708619/233741158-e4044e76-2927-43f1-b588-a94f88e395c4.png)
