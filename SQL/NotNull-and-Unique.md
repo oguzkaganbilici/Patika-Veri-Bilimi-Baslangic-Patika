@@ -12,3 +12,12 @@ Eğer sütunumuzda hali hazırda NULL değerler varsa yukarıdaki sorgu hata ver
 Olan NULL değerleri çıkarmak için;
 
 #### DELETE FROM users WHERE username IS NULL
+
+# Unique
+
+UNIQUE kısıtlaması ile uyguladığımız sütundaki verilerin birbirlerinden farklı,benzersiz olmalarını isteriz. 
+
+NOT NULL kısıtlamalarında olduğu gibi tablo oluştururken veya ALTER komutu ile beraber oluşturulan tablo üzerinde de kullanabiliriz.
+
+#### ALTER TABLE users ADD UNIQUE(email)
+
