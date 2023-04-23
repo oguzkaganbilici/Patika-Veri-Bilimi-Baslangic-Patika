@@ -21,3 +21,13 @@ NOT NULL kısıtlamalarında olduğu gibi tablo oluştururken veya ALTER komutu 
 
 #### ALTER TABLE users ADD UNIQUE(email)
 
+# Check 
+Check kısıtlaması ile uyguladığımız sütundaki verilere belirli koşullar verebiliriz. Örneğin age olarak belirlediğimiz sütuna negatif değer girilmesini engelleyebiliriz veya web portalına üye olan kullanıcıların 18 yaşından büyün olması gibi kendi senaryolarımıza uygun başka kısıtlamalar da vermek isteyebiliriz.
+
+Bir tablo oluştururken Check özelliğini eklemek istersek:
+
+#### CREATE TABLE users ( price NUMERIC CHECK(price > 0) )
+
+Var olan bir tabloya özellik eklemek istersek;
+
+#### ALTER TABLE users ADD CHECK (age > 0)
