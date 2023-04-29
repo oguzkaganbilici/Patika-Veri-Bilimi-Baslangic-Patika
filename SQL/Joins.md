@@ -25,3 +25,13 @@ LEFT JOIN yapısındaki tablo birleştirmesinde, birleştirme işlemi tablo 1(so
 
 - Eğer ki sorgumuz sonucunda NULL değerler görmek istemiyorsak sorgumuza WHERE .... IS NOT NULL; gibi sorgular ekleyebiliriz.
 ![image](https://user-images.githubusercontent.com/45708619/235300555-360be59a-215d-4dad-b516-7b82ebc347c3.png)
+
+
+## RIGHT JOIN
+RIGHT JOIN yapısındaki tablo birleştirmesinde, birleştirme işlemi tablo 2(sağ tablo) üzerinden gerçekleştirilir. Senaryomuzu şu şekilde düşünelim, eğer tablo 2 olarak author tablosunu aldığımızda öncelikle author tablosunun ilgili sütunundaki tüm verileri alacağız, sonrasında bu verilerin eşleştiği tablo 1'in ilgili sütunundaki verileri alacağız. 
+
+- Tablo 2 de olup tablo 1 de olmayan veriler için NULL değeri kullanılır.
+
+#### SELECT author.first_name, author.last_name, book.title FROM book RIGHT JOIN author ON author.id = book.id
+
+![image](https://user-images.githubusercontent.com/45708619/235302776-6e907340-1b32-424e-8fe4-93aa1f1c8ef0.png)
