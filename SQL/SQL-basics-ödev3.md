@@ -19,7 +19,7 @@ SELECT first_name, last_name, payment_id FROM customer RIGHT JOIN payment ON cus
 SELECT * FROM customer FULL JOIN rental ON customer.customer_id = rental.customer_id
 
 # Odev11
-1) actor ve customer tablolarında bulunan first_name sütunları için tüm verileri sıralayalım.
+1)actor ve customer tablolarında bulunan first_name sütunları için tüm verileri sıralayalım.
 (SELECT first_name FROM actor) UNION (SELECT first_name FROM customer)
 
 2)actor ve customer tablolarında bulunan first_name sütunları için kesişen verileri sıralayalım.
