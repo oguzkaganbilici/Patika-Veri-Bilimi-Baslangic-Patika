@@ -35,3 +35,11 @@ RIGHT JOIN yapısındaki tablo birleştirmesinde, birleştirme işlemi tablo 2(s
 #### SELECT author.first_name, author.last_name, book.title FROM book RIGHT JOIN author ON author.id = book.id
 
 ![image](https://user-images.githubusercontent.com/45708619/235302776-6e907340-1b32-424e-8fe4-93aa1f1c8ef0.png)
+
+
+## FULL JOIN 
+FULL JOIN yapısındaki tablo birleştirmesinde, birleştirme işlemi her iki tablo üzerinden gerçekleştirilir. Senaryomuzu şu şekilde düşünelim. Eğer tablo 1 olarak book tablosunu aldığımızda öncelikle book tablosundaki ilgili sütunun tüm verileri alacağız, sonrasında tablo 2 deki ilgili sütunlardan tüm verileri alacağız. 
+
+- Tablo 1 de olup tablo 2 de olmayan veya tablo 2 de olup tablo 1 de olmayan veriler için NULL kullanılır.
+
+#### SELECT author.first_name, author.last_name, book.title FROM book FULL JOIN author ON author.id  = book.author_id
