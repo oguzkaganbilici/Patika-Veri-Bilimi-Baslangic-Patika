@@ -43,3 +43,6 @@ FULL JOIN yapısındaki tablo birleştirmesinde, birleştirme işlemi her iki ta
 - Tablo 1 de olup tablo 2 de olmayan veya tablo 2 de olup tablo 1 de olmayan veriler için NULL kullanılır.
 
 #### SELECT author.first_name, author.last_name, book.title FROM book FULL JOIN author ON author.id  = book.author_id
+
+![image](https://user-images.githubusercontent.com/45708619/235303611-2d4ea11e-96a1-436e-bdf4-da47728156aa.png)
+
