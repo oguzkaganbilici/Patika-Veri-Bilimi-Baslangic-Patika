@@ -46,3 +46,33 @@ FULL JOIN yapısındaki tablo birleştirmesinde, birleştirme işlemi her iki ta
 
 ![image](https://user-images.githubusercontent.com/45708619/235303611-2d4ea11e-96a1-436e-bdf4-da47728156aa.png)
 
+## UNION 
+Union operatorü sayesinde farklı SELECT sorgularıyla oluşan sonuçları tek bir sonuç kümesi haline getiririz.
+Örneğin;
+books veritabanında 2 adet sorgu yapıyoruz. İlk sorgumuzda sayfa sayısı en fazla olan 5 kitabı, ikinci sorgumuzda ise isme göre 5 kitabı sıralıyoruz. UNION anahtar kelimesi sayesinde bu iki sorguyu da birleştirebiliriz.
+
+#### ( SELECT * FROM books ORDER BY page_number DESC LIMIT 5) UNION ( SELECT * FROM books ORDER BY title LIMIT 5)
+
+- Farklı tablolarda yaptığımız sorgularıda UNION operatorü sayesinde birleştirebiliriz. Fakat 2 tablodan çağırılan sütun sayısı eşit ve aynı veri tipleri içermelidir. Aksi takdirde hata verecektir.
+
+- UNION ile UNION ALL'ın farkı, UNION ALL birden fazla olan değerleri de gösterir. Örneğin x verisinden 3 tane varsa hepsini gösterir, UNION ise sadece birini gösterir.
+
+## INTERSECT ve EXCEPT
+INTERSECT operatörü sayesinde farklı SELECT sorgularıyla oluşan sonuçların kesişen verilerini tek bir sonuç kümesi haline getiririz.
+
+Örneğin:
+books veritabanında iki adet sorgu yapalım. İlk sorguda sayfa sayısı en fazla olan 5 kitabı, ikinci sorgumuzda ise isme göre ilk 5 kitabı sıralayalım. INTERSECT anahtar kelimesi sayesinde bu iki sorgu sonucunda oluşan veri kümelerinden kesişen verileri tek bir sonuçta birleştiririz.
+
+#### (SELECT * from books ORDER BY page_number DESC LIMIT 5) INTERSECT (SELECT * FROM books ORDER BY title LIMIT 5)
+
+- INTERSECT operatörü kullanacağı sorgunun, sütun sayıları eşit olmalıdır ve sütunlardaki veri tipleri eşleşmelidir.
+
+- INTERSECT operatorü bize keşisen veriler içerisinde tekrar edenleri göstermez. Tekrar edenleri görmek için INTERSECT ALL kullanırız.
+
+EXCEPT operatörümüz ise ilk sorgumuzda olup ancak ikinci sorgumuzda olmayan verileri verir.
+#### (SELECT * from books ORDER BY page_number DESC LIMIT 5) INTERSECT (SELECT * FROM books ORDER BY title LIMIT 5)
+
+- EXCEPT operatörü bize ilk sorguda olan ancak ikinci sorguda olmayan veriler içerisinde tekrar edenleri vermez. Bunun için EXCEPT ALL kullanılır.
+
+
+
