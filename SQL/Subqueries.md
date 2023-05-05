@@ -31,3 +31,15 @@ bookstore veritabanındaki yine aynı sorguyu inceleyelim.
 #### SELECT first_name, last_name FROM author WHERE id = ALL ( SELECT id FROM book WHERE title ='Abe Lincoln in Illinois' OR title = 'Saving Shiloh' )
 
 Alt sorgu tarafından 4 ve 5 id leri gelecektir. Aynı anda 4 ve 5 'in bu koşulu sağlaması olanaksız olduğu için herhangi bir değer dönmeyecektir. 
+
+### Joın
+
+Alt sorgular ve JOIN kavramları birlikte çok sık kullanılır. Örneğin aşağıdaki sorguyu inceleyelim:
+
+ilk senaryomuz bookstore veri tabanında sayfa sayfası ortalama sayfa sayısından fazla olan kitapların isimlerini, bu kitakların yazarlarını isim ve soyisimlerini sıralayalım.
+
+#### SELECT book.title, author.first_name, author.last_name FROM author JOIN book ON book_id = author_id WHERE page_number > (SELECT AVG(page_number) FROM book ); 
+
+ikinci senaryomuzda dvdrental veritabanında en uzun filmlerini aktör isim ve soyisimleriyle birlikte sıralayalım.
+
+#### SELECT actor.first_name, actor.last_name, film.title, film.length FROM actor JOIN film ON film_actor.actor_id = actor.actor_id JOIN film ON film.film_id = film_actor.film_id WHERE film.length = ( SELECT MAX(length)  FROM film) );
